@@ -1,5 +1,7 @@
 package com.bridgelabz.di;
-
+/*
+ * Example of dependency injection literals type
+ */
 public class Student {
 
 	private int id;
