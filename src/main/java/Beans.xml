@@ -3,18 +3,31 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
-    
+
+<!-- use of IOC -->
 <bean id = "airtel" class = "com.bridgelabz.ioc.Airtel"></bean>
 <bean id = "vodaphone" class = "com.bridgelabz.ioc.Vodaphone"></bean>
 <bean id = "sim" class = "com.bridgelabz.ioc.Jio"></bean>
 
+<!-- using setter injection
 <bean id = "student1" class = "com.bridgelabz.di.Student">
 	<property name = "studentName" value = "Julekha M" />
 	<property name = "id" value = "1" />
 </bean>
-
 <bean id = "student2" class = "com.bridgelabz.di.Student">
 	<property name = "studentName" value = "Rupali" />
 	<property name = "id" value = "2" />
+</bean>
+ -->
+ 
+<!-- using constructor injection -->
+
+<bean id = "student3" class = "com.bridgelabz.di.Student">
+	<constructor-arg name = "studentName" value = "Mayuri" type = "java.lang.String"/>
+	<constructor-arg name = "id" value = "3" />
+</bean>
+
+<bean id = "student4" class = "com.bridgelabz.di.Student">
+	<constructor-arg name = "id" value = "4" type = "int"/>
 </bean>
 </beans>
