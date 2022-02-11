@@ -5,9 +5,11 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!-- use of IOC -->
+<!--
 <bean id = "airtel" class = "com.bridgelabz.ioc.Airtel"></bean>
 <bean id = "vodaphone" class = "com.bridgelabz.ioc.Vodaphone"></bean>
 <bean id = "sim" class = "com.bridgelabz.ioc.Jio"></bean>
+-->
 
 <!-- using setter injection
 <bean id = "student1" class = "com.bridgelabz.di.Student">
@@ -21,7 +23,7 @@
  -->
  
 <!-- using constructor injection -->
-
+<!--  
 <bean id = "student3" class = "com.bridgelabz.di.Student">
 	<constructor-arg name = "studentName" value = "Mayuri" type = "java.lang.String"/>
 	<constructor-arg name = "id" value = "3" />
@@ -30,4 +32,39 @@
 <bean id = "student4" class = "com.bridgelabz.di.Student">
 	<constructor-arg name = "id" value = "4" type = "int"/>
 </bean>
+-->
+
+<!-- DI for object type using setter method -->
+<!--  
+<bean id ="stud" class="com.bridgelabz.di.objecttype.Students">
+<property name = "id" value = "101" />
+
+<property name = "mathExam">
+ 	<bean class = "com.bridgelabz.di.objecttype.MathExam"></bean>
+</property>
+</bean>
+-->
+
+<!-- DI for object type using constructor -->
+<!--
+<bean id = "mathExamObjectValue" class = "com.bridgelabz.di.objecttype.MathExam"></bean> 
+	
+	<bean id ="stud" class="com.bridgelabz.di.objecttype.Students">
+	<property name = "id" value = "101" />
+	<property name = "mathExam" ref = "mathExamObjectValue"></property>
+	</bean>
+
+	<bean id ="anotherStud" class="com.bridgelabz.di.objecttype.AnotherStudent">
+	<property name = "math" ref = "mathExamObjectValue"></property>
+	</bean>
+-->
+<!-- DI using loose-coupling -->
+<bean id = "mathExamObjectValue" class = "com.bridgelabz.di_looseCoupling.MathExam"></bean> 
+<bean id = "scienceExamObjectValue" class = "com.bridgelabz.di_looseCoupling.ScienceExam"></bean> 
+<bean id = "javaExamObjectValue" class = "com.bridgelabz.di_looseCoupling.JavaExam"></bean> 
+	
+
+	<bean id ="studentExam" class="com.bridgelabz.di_looseCoupling.StudentExam">
+	<property name = "exam" ref = "javaExamObjectValue"></property>
+	</bean>
 </beans>
