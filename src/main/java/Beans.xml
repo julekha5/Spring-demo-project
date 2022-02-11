@@ -8,4 +8,13 @@
 <bean id = "vodaphone" class = "com.bridgelabz.ioc.Vodaphone"></bean>
 <bean id = "sim" class = "com.bridgelabz.ioc.Jio"></bean>
 
+<bean id = "student1" class = "com.bridgelabz.di.Student">
+	<property name = "studentName" value = "Julekha M" />
+	<property name = "id" value = "1" />
+</bean>
+
+<bean id = "student2" class = "com.bridgelabz.di.Student">
+	<property name = "studentName" value = "Rupali" />
+	<property name = "id" value = "2" />
+</bean>
 </beans>

@@ -1,7 +1,7 @@
 package com.bridgelabz.ioc;
 
 public class Airtel implements Sim {
-	
+
 	public Airtel() {
 		System.out.println("airtel constructor called");
 	}
