@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+<context:annotation-config/>
 
 <!-- use of IOC -->
 <!--
@@ -59,12 +64,38 @@
 	</bean>
 -->
 <!-- DI using loose-coupling -->
+<!--  
 <bean id = "mathExamObjectValue" class = "com.bridgelabz.di_looseCoupling.MathExam"></bean> 
 <bean id = "scienceExamObjectValue" class = "com.bridgelabz.di_looseCoupling.ScienceExam"></bean> 
 <bean id = "javaExamObjectValue" class = "com.bridgelabz.di_looseCoupling.JavaExam"></bean> 
 	
-
 	<bean id ="studentExam" class="com.bridgelabz.di_looseCoupling.StudentExam">
 	<property name = "exam" ref = "javaExamObjectValue"></property>
 	</bean>
+-->
+
+<!-- use of autowired -->	
+<!-- 
+<bean id ="heart" class = "com.bridgelabz.autowired.Heart"></bean>
+<bean id ="octopousHeart" class = "com.bridgelabz.autowired.Heart"></bean>
+
+        <bean id = "human" class = "com.bridgelabz.autowired.Human"></bean>-->     
+	    <!-- <bean id ="human" class="com.bridgelabz.autowired.Human" autowire = "constructor"> -->
+		<!-- <bean id ="human" class="com.bridgelabz.autowired.Human" autowire = "byType"> -->
+		<!-- <bean id ="human" class = "com.bridgelabz.autowired.Human" autowire = "byName"> -->
+		<!--
+		<bean id = "human" class="com.bridgelabz.autowired.Human">
+		<property name= "heart" ref="heartObject"></property>
+		</bean>
+		-->
+<!-- use of @qualifier -->		
+<bean id ="humanHeart" class = "com.bridgelabz.autowired.Heart">
+	<property name ="nameOfAnimal" value ="Human"/>
+	<property name ="NoOfHeart" value ="1"/>
+</bean>
+<bean id ="octopousHeart" class = "com.bridgelabz.autowired.Heart">
+	<property name ="nameOfAnimal" value ="Human"/>
+	<property name ="NoOfHeart" value ="3"/>
+</bean>
+<bean id ="human" class="com.bridgelabz.autowired.Human"></bean>
 </beans>
